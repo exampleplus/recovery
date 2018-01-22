@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>微回收</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_526177_to2bczt2b27ta9k9.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-content{
+				font-size: 14px;
+			}
+			.mui-laba{
+				height: 40px;
+				line-height: 40px;
+				background: #fff;
+				overflow: hidden;
+				padding-left:10px;
+			}
+			.block {
+				position: relative;
+				height: 400px;
+				overflow: hidden;
+				font-size: 12px;
+			}
+			.item {
+				height: 40px;
+				color: #000;
+				line-height: 40px;
+				text-align: center;
+			}
+			.phoneType,.money{
+				color:rgb(255,152,0)
+			}
+			.mui-margin-top10{
+				margin-top: 10px;
+			}
+			
+			.mui-border-blue{
+				display: inline-block;
+				width:5px;
+				height: 20px;
+				background: rgb(0,176,155);
+			}
+			.mui-table-view-cell:after{
+				height: 0;
+			}
+			.mui-table-view-cell p{
+				font-size: 12px;
+			}
+			.saleProgress ul li{
+				text-align: center;
+			}
+			.saleProgress li{
+				display: inline-block;
+			}
+		
+			
+			.serviceEncure img{
+				width: 100%;
+			}
+			.serviceCont{
+				width: 100%;
+			}
+			.mui-border-right{
+				border-right: 1px solid #CCCCCC;
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				padding: 0 15px;
+				border-right: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+			}
+			.sansung{
+				color:#000;
+				font-weight: 600;
+				font-size: 18px;
+			}
+			.iconfont{
+				color:#000;
+				font-size: 18px;
+				
+			}
+			.mui-more{
+				color:rgb(0,176,155);
+				font-size: 14px;
+				margin-right: 10px;
+			}
+			.customService{
+				margin-top: 15px;
+				background: #FFF;
+				padding:10px 0;
+				margin-bottom: 15px;
+			}
+			.salePhone{
+				background: rgb(0,176,155);
+				color: #fff;
+				padding: 10px 0;
+			}
+			.salePeople{
+				color:rgb(255,152,0)
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--轮播-->
+		    <div id="slider" class="mui-slider" >
+		      <div class="mui-slider-group mui-slider-loop">
+		        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+		        <div class="mui-slider-item mui-slider-item-duplicate">
+		          <a href="#">
+		            <img src="img/banner02.png">
+		          </a>
+		        </div>
+		        <!-- 第一张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="img/banner01.jpg">
+		          </a>
+		        </div>
+		        <!-- 第二张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="img/banner02.png">
+		          </a>
+		        </div>
+		        <!-- 第三张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="img/banner01.jpg">
+		          </a>
+		        </div>
+		      </div>
+		      <div class="mui-slider-indicator">
+		        <div class="mui-indicator mui-active"></div>
+		        <div class="mui-indicator"></div>
+		      </div>
+		    </div>
+			<div class="mui-laba mui-margin-top10">
+				<span class="mui-pull-left icon iconfont icon-laba"> </span>
+				<div class="mui-pull-left block" id="block">
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+					<div class="item">用户130****2789卖出一部  <strong class="phoneType">vivo X20 </strong>获得<strong class="money"> 1000</strong>元</div>
+				</div>
+			</div>
+			<!--卖旧手机流程-->
+			<div class="saleProgress mui-margin-top10">
+				<span class="mui-border-blue"></span>
+				<span>卖旧手机流程</span>
+				<ul class="mui-table-view mui-row">
+			        <li class="mui-table-view-cell mui-col-sm-3 mui-col-xs-3">
+			           <span class="icon iconfont icon-sousuo"></span>
+			           <p>选机型</p>
+			        </li>
+			        <li class="mui-table-view-cell mui-col-sm-3 mui-col-xs-3">
+			           <span class="icon iconfont icon-iconmoban"></span>
+			           <p>估价格</p>
+			        </li>
+			        <li class="mui-table-view-cell mui-col-sm-3 mui-col-xs-3">
+			           <span class="icon iconfont icon-qicheqianlian-"></span>
+			           <p>上门取件</p>
+			        </li>
+			         <li class="mui-table-view-cell mui-col-sm-3 mui-col-xs-3">
+			           <span class="icon iconfont icon-shoukuan"></span>
+			           <p>微信收款</p>
+			        </li>
+				</ul>
+			</div>
+			<!--微回收服务保障-->
+			<div class="serviceEncure mui-margin-top10">
+				<span class="mui-border-blue"></span>
+				<span>微回收服务保障</span>
+				<div class="serviceCont mui-row mui-margin-top10">
+					<div class="mui-col-sm-4 mui-col-xs-4">
+					<img src="img/tencent.jpg" class="mui-border-right"/>
+					</div>
+					<div class="mui-col-sm-4 mui-col-xs-4 ">
+						<img src="img/clear.jpg"/ class="mui-border-right">
+					</div>
+					<div class="mui-col-sm-4 mui-col-xs-4">
+						<img src="img/quatilty.jpg"/>
+					</div>
+				</div>
+			</div>
+			<!--热门回收品牌-->
+			<div class="recoveryType mui-margin-top10">
+				<span class="mui-border-blue"></span>
+				<span>热门回收品牌</span>
+				<span class="mui-pull-right mui-more">
+					更多
+				</span>
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					    <a href="#">
+					        <span class=" icon iconfont icon-iphone"></span>
+					        <div class="mui-media-body">苹果</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					    <a href="#">
+					        <span class=" icon iconfont icon-Huawei">
+					        </span>
+					        <div class="mui-media-body">华为</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					    <a href="#">
+					        <span class=" icon iconfont icon-xiaomi"></span>
+					        <div class="mui-media-body">小米</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					    <a href="#">
+					        <span class="sansung">SAMSUNG</span>
+					        <div class="mui-media-body">三星</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					    <a href="#">
+					        <span class="icon iconfont  icon-meizu"></span>
+					        <div class="mui-media-body">魅族</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					    <a href="#">
+					        <span class=" icon iconfont icon-changyonglogo36"></span>
+					        <div class="mui-media-body">oppo</div>
+					    </a>
+					</li>
+				</ul>
+			</div>
+			<!--在线客服-->
+			<div class="mui-text-center customService">
+				<span class="icon iconfont icon-wenhao"></span>
+				<span>在线客服</span>
+			</div>
+			<!--我要卖手机-->
+			<div class="mui-content-padded mui-text-center">
+				<button type="button" class="mui-btn mui-btn-block salePhone">我要卖手机</button>
+				<p>已有 <span class="salePeople">12345234</span>人通过卖旧手机换了钱</p>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/scroll.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				
+			})
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 2000
+			});
+			//滚动
+			window.onload = function() {
+			//on:间歇滚动/无缝滚动 height:间歇滚动的高度
+				scrollUp({
+					id: 'block',
+					height: 40
+				});
+			}
+				
+		</script>
+	</body>
+
+</html>
