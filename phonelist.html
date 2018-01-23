@@ -54,6 +54,20 @@
 		input[type=search]{
 			background: #fff;
 			border-radius: 0;
+			margin-bottom: 0;
+		}
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+			color:rgb(0,176,155);
+			background: #fff;
+			border:none;
+		}
+		.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item, .mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item.mui-active{
+			border:none;
+		}
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+			background:rgb(0,176,155);
+			color:#fff;
+			border:none
 		}
 		</style>
 	</head>
@@ -74,7 +88,7 @@
 				</div>
 			</div>
 			
-			<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;"> 
+			<div id="segmentedControlContents" class="mui-col-xs-9"> 
 				
 			</div>
 		</div>
@@ -87,7 +101,7 @@
 			$.ajax({
 				type:"get",
 				url:"js/phonelist.json",
-				async:true,
+				async:false,
 				success:function(res){
 					list=res.data.list;
 //					console.log(list)
@@ -103,10 +117,16 @@
 					
 				}
 			});
+
 			var segmentedControls=$("#segmentedControls");
-			segmentedControls.on("click",segmentedControls.find("a"),function(){
-					var i=$(this).index();
-					console.log(i);
+			var controls=document.getElementById("segmentedControls")
+			controls.querySelector('.mui-control-item').classList.add('mui-active');
+			
+			var oA=segmentedControls.find("a");
+			console.log(oA.length);
+			oA.click(function(){
+				var i=$(this).index()
+				console.log(i)
 			})
 		</script>
 	</body>

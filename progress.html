@@ -68,6 +68,47 @@
 				top:-8px;
 				color:rgb(0,176,155);
 			}
+			.font12{
+				font-size: 12px;
+			}
+			.bg-white{
+				background: #fff;
+				padding-top: 5px;
+			}
+			.first{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				border-radius: 50%;
+				background: rgb(0,176,155);
+				color: #fff;
+			}
+			.evaluateProgress{
+				margin-top: 10px;
+			}
+			.color-green{
+				color:rgb(0,176,155) ;
+			}
+			.border-green{
+				border: 1px solid rgb(0,176,155);
+			}
+			.border-left{
+				border-left: 1px solid #ccc;
+			}
+			.mui-margin-top10{
+				margin-top: 10px;
+			}
+			.mui-margin-left10{
+				margin-left: 10px;
+			}
+			.mui-paddleft-10{
+				padding-left: 10px;
+			}
+			.mui-margin-bottom10{
+				margin-bottom: 10px;
+			}		
 		</style>
 	</head>
 	<body>
@@ -85,7 +126,66 @@
 				</div>
 			</div>
 			<div class="mui-content-padded">
-				<p>请根据实际情况评估您的手机；如最终检测结果与您评估一至，收款速度提升30%以上，还有更多红包等你来拿</p>
+				<p class="font12">请根据实际情况评估您的手机；如最终检测结果与您评估一至，收款速度提升30%以上，还有更多红包等你来拿</p>
+			</div>
+			<div class="bg-white">
+				<div class="mui-content-padded">
+					<span>
+						回收评估
+					</span>
+					<div class="evaluateProgress">
+						<span class="first">
+							1
+						</span>
+						<span class="color-green">保修情况</span>
+						<div class="mui-row border-left mui-margin-top10 mui-margin-left10 mui-paddleft-10 mui-margin-bottom10">
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square font12">
+									保修期一个月以上
+							</div>
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square mui-margin-left10 font12">
+								 保修期少于一个月或过保
+							</div>
+						</div>
+						
+						<span class="first">
+							2
+						</span>
+						<span class="color-green">版本</span>
+						<div class="mui-row border-left mui-margin-top10 mui-margin-left10 mui-paddleft-10 mui-margin-bottom10">
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square font12">
+									<p><span>A1586</span></p>
+									<p><span>公开版</span></p>
+							</div>
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square mui-margin-left10 font12">
+								<p><span>A1586</span></p>
+								<p><span>公开版</span></p>
+							</div>
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square mui-margin-left10 font12">
+								<p><span>A1586</span></p>
+								<p><span>公开版</span></p>
+							</div>
+						</div>
+						
+						<span class="first">
+							3
+						</span>
+						<span class="color-green">购买渠道</span>
+						<div class="mui-row border-left mui-margin-top10 mui-margin-left10 mui-paddleft-10 mui-margin-bottom10">
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square font12">
+									<p><span>大陆国行</span></p>
+							</div>
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square mui-margin-left10 font12">
+								<p><span>香港行货</span></p>
+							</div>
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square mui-margin-left10 font12">
+								<p><span>水货无锁</span></p>
+							</div>
+							<div class="mui-col-sm-3 mui-col-xs-3 mui-text-center border-green color-green square mui-margin-top10 font12">
+								<p><span>水货有锁</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微回收</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_526177_to2bczt2b27ta9k9.css" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+		body{
+			padding-top:106px;
+			font-size: 14px;
+		}
+		ul,li{
+			margin:0;
+			padding: 0;
+		}
+			.top-bar{
+				position: fixed;
+				top:0;
+				left:0;
+				right: 0;
+				z-index: 10;
+				padding: 15px;
+				background: #fff;
+				overflow: hidden;
+			}
+			.phone{
+				width: 70px;
+				height: 70px;
+				line-height: 70px;
+				text-align: center;
+				border: 2px solid rgb(0,176,155);
+				border-radius: 70px;
+				
+			}
+			p{
+				margin:0;
+			}
+			.progressbar{
+				width: 60%;
+				margin-left: 10px;
+				margin-top:15px;
+				font-size: 14px;
+				/*height: 100px;
+				line-height: 100px;*/
+			}
+			.bar-gray{
+				width: 100%;
+				height: 6px;
+				border-radius: 3px;
+				background: gray;
+				position: relative;
+				margin-top: 3px;
+				
+			}
+			.bar-green{
+				display: inline-block;
+				height:6px;
+				border-radius: 3px;
+				background: rgb(0,176,155);
+				width: 20%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 10;
+			}
+			.progress-num{
+				position: absolute;
+				right: -30px;
+				top:-8px;
+				color:rgb(0,176,155);
+			}
+			.font12{
+				font-size: 12px;
+			}
+			.bg-white{
+				background: #fff;
+				padding-top: 5px;
+			}
+			.bg-green{
+				background: rgb(0,176,155);
+			}
+			.first{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				border-radius: 50%;
+				background: #ccc;
+				color: #fff;
+			}
+			.evaluateProgress{
+				margin-top: 10px;
+			}
+			.color-gray{
+				color: #ccc;
+			}
+			.color-green{
+				color:rgb(0,176,155) ;
+			}
+			.border-green{
+				border: 1px solid rgb(0,176,155);
+			}
+			.border-left{
+				border-left: 1px solid #ccc;
+			}
+			.mui-margin-top10{
+				margin-top: 10px;
+			}
+			.mui-margin-left10{
+				margin-left: 10px;
+			}
+			.mui-paddleft-10{
+				padding-left: 10px;
+			}
+			.mui-margin-bottom10{
+				margin-bottom: 10px;
+			}		
+			.color-white{
+				color: #fff!important;
+			}
+			/*.mui-grid-view.mui-grid-9{
+				border-left: none;
+				border-top: none;
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border-right: none;
+				border-bottom: none;
+			}
+			.mui-table-view-cell{
+				font-size: 12px!important;
+				border: 1px solid rgb(0,176,155);
+			}*/
+			.row{
+				margin-top:10px;
+				padding-left: 10px;
+				border-left: 1px solid #ccc;
+				margin-left: 10px;
+			}
+			.baoxiu li{
+				font-size: 12px;
+				display: inline-block;
+				list-style: none;
+				border:1px solid  rgb(0,176,155);
+				padding:5px;
+				text-align: center;
+				height: 50px;
+				border-radius: 3px;
+			}
+		
+			.version li,.origin li,.storage li,.screen li,.Repair li, .Appearance li,.Appearance-show li,.func li{
+				font-size: 12px;
+				float: left;
+				list-style: none;
+				border:1px solid #ccc;
+				padding: 3px 5px;
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				padding: 0 5px;
+				color: #666;
+				border-radius: 3px;
+				
+			}
+			
+			/*大于414*/
+			@media screen and (min-width: 415px) {
+				.baoxiu li,.version li,.origin li,.storage li,.screen li,.Repair li,.Appearance li,.Appearance-show li,.func li{
+					width: 13%;
+				}
+				.last-origin,.last-storage{
+					margin-left: 5px;
+				}
+			.Appearance-last{
+					margin-left:5px;
+				}
+				.storage128{
+					margin-left: 5px;
+				}
+				.Appearance-show-secondlast{
+					margin-left: 5px;
+				}
+				.Appearance-show-last{
+					margin-left: 5px;
+				}
+				.func4,.func5,.func6,.func7,.func9{
+					margin-left: 5px;
+				}
+				.func8{
+					margin-left: 5px;
+				}
+				.func8,.func9{
+					margin-top: 5px;
+				}
+				.func7{
+					margin-left: 0;
+					margin-top: 5px;
+					
+				}
+			}
+			
+			/*大于768*/
+			@media screen and (min-width: 1023px) {
+				.baoxiu li,.screen li,.screen-show li,.Appearance li,.Appearance-show li,.func li{
+					width: 15%;
+				}
+				.Appearance-last{
+					margin-left:5px;
+				}
+				.Appearance-show-last{
+					margin-left: 5px;
+				}
+				
+				/*.last-origin,.last-storage{
+					margin-left: 5px;
+				}*/
+				
+			}
+			
+			/*小于480*/
+			@media screen and (max-width: 481px) {
+				.baoxiu li,.version li,.origin li,.storage li,.screen li,.Repair li,.Appearance li,.Appearance-show li,.func li{
+					width: 20%;
+				}
+				.last-origin{
+					margin-left: 5px;
+				}
+				.last-storage{
+					margin-top: 5px;
+					margin-left: 0;
+				}
+				.storage128{
+					margin-left: 5px;
+				}
+				.Appearance-last{
+					margin-top:0px;
+				}
+				.Appearance-show-last{
+					margin-left: 0;
+					margin-top: 5px;
+				}
+				.func4,.func6,.func7,.func8{
+					margin-left: 5px;
+				}
+				.func5,.func9{
+					margin-left: 0;
+				}
+				.func5,.func7,.func6,.func8,.func9{
+					margin-top: 5px;
+				}
+			}
+			/*414*/
+			@media screen and (max-width: 415px) {
+				.baoxiu li,.version li,.origin li,.storage li,.screen li,.Repair li,.Appearance li,.Appearance-show li,.func li{
+					width: 23%;
+				}
+				.last-origin{
+					margin-left: 5px;
+				}
+				.last-storage{
+					margin-left: 0;
+					margin-top: 5px;
+				}
+				.Appearance-last{
+					margin-top:0px;
+					margin-left: 5px;
+				}
+				.Appearance-show-secondlast{
+					margin-left: 5px;
+				}
+			}
+			/*iphone6  375*/
+			@media screen and (max-width: 376px) {
+				.baoxiu li,.version li,.origin li,.storage li,.screen li,.Repair li,.Appearance li,.Appearance-show li,.func li{
+					width: 26%;
+				}
+				.last-origin{
+					margin-left: 0px;
+					margin-top: 5px;
+				}
+				.last-storage{
+					margin-left: 5px;
+				}
+				.storage128,.Appearance-show-secondlast{
+					margin-left: 0;
+					margin-top: 5px;
+				}
+				.Appearance-show-last{
+					margin-left: 5px;
+				}
+				.Appearance-last{
+					margin-top:5px;
+					margin-left: 0px;
+				}
+					
+				.func4{
+					margin-left: 0;
+					margin-top:5px;
+				}
+				.func7{
+					margin-left: 0;
+				}
+				.func5,.func9{
+					margin-left: 5px;
+				}
+				
+			}
+				/*三星  360*/
+			@media screen and (max-width: 361px) {
+				.baoxiu li,.version li,.origin li,.storage li,.screen li,.Repair li,.Appearance li,.Appearance-show li,.func li{
+					width: 27%;
+				}
+				.last-storage{
+					margin-left: 5px;
+				}
+				.storage128{
+					margin-left: 0px;
+					margin-top: 5px;
+				}
+				.Appearance-last{
+					margin-top:5px;
+				}
+				.Appearance-show-secondlast,.Appearance-show-last{
+					margin-top: 5px;
+				}
+				.Appearance-show-secondlast{
+					margin-left: 0;
+				}
+				.Appearance-show-last{
+					margin-left: 5px;
+				}
+				.func4,.func5,.func6,.func7,.func8,.func9{
+					margin-top: 5px;
+				}
+				.func4{
+					margin-left: 0;
+				}
+				.func5{
+					margin-left: 5px;
+					
+				}
+				.func7{
+					margin-left: 0;
+				}
+				.func9,.func8{
+					margin-left: 5px;
+				}
+			}
+			
+			/*iphone5  320 */
+			@media screen and (max-width: 321px) {
+				.baoxiu li,.version li,.origin li,.storage li,.screen li,.Repair li,.Appearance li,.Appearance-show li,.func li{
+					width: 31%;
+				}
+				.last-storage{
+					margin-left: 5px;
+				}
+				.storage128{
+					margin-left: 0px;
+					margin-top: 5px;
+				}
+				.Appearance-last{
+					margin-top:5px;
+				}
+				.func4{
+					margin-left: 0;
+				}
+				.func5{
+					margin-left: 5px;
+				}
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+			<div class="top-bar">
+				<div class="mui-pull-left phone" >
+					手机图片
+				</div>
+				<div class="mui-pull-left progressbar">
+					<span class="">手机估价进度</span>
+					<p class="bar-gray">
+						<span class="bar-green"></span>
+						<span class="progress-num">0%</span>
+					</p>
+				</div>
+			</div>
+			<div class="mui-content-padded">
+				<p class="font12">请根据实际情况评估您的手机；如最终检测结果与您评估一至，收款速度提升30%以上，还有更多红包等你来拿</p>
+			</div>
+			<div class="bg-white">
+				<div class="mui-content-padded">
+					<span>
+						回收评估
+					</span>
+					<div class="evaluateProgress">
+						<!--1、保修-->
+						<span class="first" style="background: rgb(0,176,155);">
+							1
+						</span>
+						<span class="color-green">保修情况</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="baoxiu" style="color: rgb(0,176,155); overflow: hidden;">
+								<li>保修期一个月以上</li>
+								<li style="margin-left: 5px;">保修期少于一个月或过保</li>
+							</ul>
+						</div>
+						<!--2、版本-->
+						<span class="first">
+							2
+						</span>
+						<span class="color-gray">版本</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="version" style="overflow: hidden;">
+								<li>A1661</li>
+								<li style="margin-left: 5px;">A1786</li>
+								<li style="margin-left: 5px;">其他型号</li>
+							</ul>
+						</div>
+						<!--1、购买渠道-->
+						<span class="first">
+							3
+						</span>
+						<span class="color-gray">购买渠道</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="origin" style="overflow: hidden;">
+								<li>大陆国货</li>
+								<li style="margin-left: 5px;">香港行货</li>
+								<li style="margin-left: 5px;">水货有锁</li>
+								<li style="" class="last-origin">水货无锁</li>
+							</ul>
+						</div>
+						<!--1、存储容量-->
+						<span class="first">
+							4
+						</span>
+						<span class="color-gray">存储容量</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="storage" style="overflow: hidden;">
+								<li>16G</li>
+								<li style="margin-left: 5px;">32G</li>
+								<li style="margin-left: 5px;">64G</li>
+								<li class="storage128">128G</li>
+								<li style="" class="last-storage">256G</li>
+							</ul>
+						</div>
+						
+						<!--5、屏幕-->
+						<span class="first">
+							5
+						</span>
+						<span class="color-gray">屏幕</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="screen" style="overflow: hidden;">
+								<li>屏幕完好</li>
+								<li style="margin-left: 5px;">屏幕有划痕</li>
+								<li style="margin-left: 5px;">屏幕破损</li>
+							</ul>
+						</div>
+						<!--6、维修-->
+						<span class="first">
+							6
+						</span>
+						<span class="color-gray">维修</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="Repair" style="overflow: hidden;">
+								<li>无维修</li>
+								<li style="margin-left: 5px;">有小维修</li>
+								<li style="margin-left: 5px;">有大维修</li>
+							</ul>
+						</div>
+						<!--7、外观-->
+						<span class="first">
+							7
+						</span>
+						<span class="color-gray">外观</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="Appearance" style="overflow: hidden;">
+								<li>外观完好</li>
+								<li style="margin-left: 5px;">外观有划痕</li>
+								<li style="margin-left: 5px;line-height: normal;padding-top: 6px;">外观磕碰或有掉漆</li>
+								<li style="line-height: normal;padding-top: 6px;" class="Appearance-last">机身变形或断裂</li>
+								
+							</ul>
+						</div>
+						
+						<!--8、屏幕显示-->
+						<span class="first">
+							8
+						</span>
+						<span class="color-gray">屏幕显示</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="Appearance-show" style="overflow: hidden;">
+								<li>显示正常</li>
+								<li style="margin-left: 5px; line-height: normal;padding-top: 6px;">屏幕有轻微色差</li>
+								<li style="margin-left: 5px;line-height: normal;padding-top: 6px;">屏幕有明显色差</li>
+								<li style="" class="Appearance-show-secondlast">显示不正常</li>
+								<li style="" class="Appearance-show-last">液晶不显示</li>
+							</ul>
+						</div>
+						<!--8、功能选项-->
+						<span class="first">
+							9
+						</span>
+						<span class="color-gray">功能选项(可多选)</span>
+						<div class="row mui-margin-bottom10">
+							<ul class="func" style="overflow: hidden;">
+								<li>无法正常开机</li>
+								<li style="margin-left: 5px;">通话不正常</li>
+								<li style="margin-left: 5px;line-height: normal;padding-top: 0px;">WiFi/充电/拍照等功能不正常</li>
+								<li style="line-height: normal;padding-top: 5px;" class="func4">机身进水或受潮</li>
+								<li style="line-height: normal;padding-top: 5px;" class="func5">触摸功能不正常</li>
+								<li style="line-height: normal;padding-top: 5px;" class="func6">指纹功能不正常</li>
+								<li style="" class="func7">换过手机屏幕</li>
+								<li style="" class="func8">官换机</li>
+								<li style="" class="func9">以上均无问题</li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			mui.init({
+				
+			})
+			$(".baoxiu").find("li").click(function(){
+				$(this).addClass('bg-green color-white').siblings().removeClass('bg-green color-white');
+			})
+			//版本
+			$(".version").find("li").click(function(){
+				$(this).addClass('bg-green color-white').siblings().removeClass('bg-green color-white');
+			})
+			//渠道
+			$(".origin").find("li").click(function(){
+				$(this).addClass('bg-green color-white').siblings().removeClass('bg-green color-white');
+			})
+			//容量
+			$(".storage").find("li").click(function(){
+				$(this).addClass('bg-green color-white').siblings().removeClass('bg-green color-white');
+			})
+			//屏幕
+			$(".screen").find("li").click(function(){
+				$(this).addClass('bg-green color-white').siblings().removeClass('bg-green color-white');
+			})
+			//维修
+			$(".Repair").find("li").click(function(){
+				$(this).addClass('bg-green color-white').siblings().removeClass('bg-green color-white');
+			})
+		</script>
+	</body>
+</html>
