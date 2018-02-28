@@ -98,36 +98,43 @@
 			mui.init({
 				swipeBack: true //启用右滑关闭功能
 			})
+			
+			var controls=document.getElementById("segmentedControls");
+			var contents = document.getElementById("segmentedControlContents");
+		
+			//获取手机型号和手机数据
 			$.ajax({
 				type:"get",
 				url:"js/phonelist.json",
 				async:false,
 				success:function(res){
 					list=res.data.list;
-//					console.log(list)
-					var type=list.type;
+					type=list.type;
+					var iphone;//苹果系列
+					var huawei;//华为系列
 					var segmentedControls=$("#segmentedControls");//左侧菜单栏
-					var segmentedControlContents=$("#segmentedControlContents");
 					//遍历左边菜单栏
-					$(type).each(function(i,value){
-						var val=type[i];
-						segmentedControls.append('<a href="content'+i+'" class="mui-control-item">'+val.type+'</a>'
-						);
-					});
-					
+					var html=[];
+						$(type).each(function(index,value){
+							var val=type[index];
+							html.push('<a class="mui-control-item" href="#content' + index + '">' + val.type + '</a>');
+						})
+						controls.innerHTML = html.join('');
+						html=[];
+						for (var i in list){
+							html.push(
+								'<div id="content' + i + '" class="mui-control-content">'+
+								'<ul class="mui-table-view">'+
+								'<li class="mui-table-view-cell">'+'</li>'
+								+'</ul>'+
+								'</div>'
+								);
+						}
+						contents.innerHTML = html.join('');
 				}
 			});
 
-			var segmentedControls=$("#segmentedControls");
-			var controls=document.getElementById("segmentedControls")
-			controls.querySelector('.mui-control-item').classList.add('mui-active');
-			
-			var oA=segmentedControls.find("a");
-			console.log(oA.length);
-			oA.click(function(){
-				var i=$(this).index()
-				console.log(i)
-			})
+			controls.querySelector('.mui-control-item').classList.add('mui-active');//默认选择左边菜单栏第一个，并切换颜色
 		</script>
 	</body>
 </html>

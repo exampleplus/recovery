@@ -3,36 +3,26 @@
 	"message":"获取成功",
 	"data":{
 		"list":{
-					"type": [
-								{"type":"iPhone"},
-								{"type":"小米"},
-								{"type":"华为"}
-							],
-					"phone":{
-							"iphone":[
-								{"phoneType":"iphone6"},
-								{"phoneType":"iphone5s"},
-								{"phoneType":"iphone6s"},
-								{"phoneType":"iphone6 Plus"},
-								{"phoneType":"iphone6s Plus"},
-								{"phoneType":"iphone7"},
-								{"phoneType":"iphone7 Plus"}
-						],
-						"xiaomi":[
-							{"phoneType":"小米Mix"},
-							{"phoneType":"小米手机3"},
-							{"phoneType":"小米手机4"},
-							{"phoneType":"红米Note2"},
-							{"phoneType":"小米手机 2s"},
-							{"phoneType":"小米手机 2A"}
-						],
-						"huawei":[
-							{"phoneType":"华为P8"},
-							{"phoneType":"华为P7"},
-							{"phoneType":"华为P9"},
-							{"phoneType":"华为畅享5"}
-						]
-					}
+			"type":[
+				{"type":"iPhone"},
+				{"type":"华为"}
+			],
+			"iphone":[
+				{"phoneType":"iphone6"},
+				{"phoneType":"iphone5s"},
+				{"phoneType":"iphone6s"},
+				{"phoneType":"iphone6 Plus"},
+				{"phoneType":"iphone6s Plus"},
+				{"phoneType":"iphone7"},
+				{"phoneType":"iphone7 Plus"}
+			],
+			"huawei":[
+				{"phoneType":"华为P8"},
+				{"phoneType":"华为P7"},
+				{"phoneType":"华为P9"},
+				{"phoneType":"华为畅享5"}
+			]
 		}
 	}
 }
+

@@ -1,0 +1,12 @@
+{
+	"code":0,
+	"message":"获取成功",
+	"data":{
+		"list":{
+			"type":[
+				{"phoneType":"iphone"},
+				{"phoneType":"huawei"}
+			]
+		}
+	}
+}
